@@ -38,19 +38,21 @@
             var element = document.createElement("div");
             element.className = "kata "+i
             var dest = document.getElementById("d2")
+
+            // create and append header for each section
             var headElement = document.createElement("h2")
             var headText = document.createTextNode("Kata "+i)
             headElement.appendChild(headText)
             dest.appendChild(headElement)
             
             if (i==1) {
-                for(let j=0; j<=20; j++) {
+                for(let j=1; j<=20; j++) {
                     var newText = document.createTextNode(j+' ')
                     element.appendChild(newText)
                     dest.appendChild(element)
                 }
             } else if (i==2) {
-                for(let j=0; j<=20; j+=2) {
+                for(let j=2; j<=20; j+=2) {
                     var newText = document.createTextNode(j+' ')
                     element.appendChild(newText)
                     dest.appendChild(element)
@@ -62,13 +64,13 @@
                     dest.appendChild(element)
                 }
             } else if (i==4) {
-                for(let j=0; j<=100; j+=5) {
+                for(let j=5; j<=100; j+=5) {
                     var newText = document.createTextNode(j+' ')
                     element.appendChild(newText)
                     dest.appendChild(element)
                 }
             } else if (i==5) {
-                for(let j=0; j<=10; j+=1) {
+                for(let j=1; j<=10; j+=1) {
                     var newText = document.createTextNode(j*j+' ')
                     element.appendChild(newText)
                     dest.appendChild(element)
