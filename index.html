@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Adding content with document.createElement</title>
+    <style>
+      .bar {background: gray; height: 20px; margin: 10px; color: white;}
+    </style>
+  </head>
+  <body>
+    <h1>Adding content with document.createElement</h1>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <script>
+        const sampleArray = [469, 755, 244, 245, 758, 450, 302, 20, 712, 71, 456, 21, 398, 339, 882, 848, 179, 535, 940, 472];
+        
+        // mini-lesson code
+        for(let i=1; i<=3; i++) {
+            // Create a div, with class "bar", and set the width to 100px.
+            var newElement = document.createElement("div");
+            newElement.className = "bar";
+            newElement.style.width = i*100 + "px";
+
+            // Place a text label inside the new div.
+            var newText = document.createTextNode("Bar #" + i);
+            newElement.appendChild(newText);
+
+            // Put the new div on the page inside the existing element "d1".
+            var destination = document.getElementById("d1");
+            destination.appendChild(newElement);
+        }
+        
+        // JS katas 03 code
+        // Kata 01
+
+        for(let i=1; i<=23; i++) {
+            var element = document.createElement("div");
+            element.className = "solution "+i
+            var dest = document.getElementById("d2")
+            var headElement = document.createElement("h2")
+            var headText = document.createTextNode("Kata "+i)
+            headElement.appendChild(headText)
+            dest.appendChild(headElement)
+            
+            if (i==1) {
+                for(let j=0; j<=20; j++) {
+                    var newText = document.createTextNode(j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==2) {
+                for(let j=0; j<=20; j+=2) {
+                    var newText = document.createTextNode(j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==3) {
+                for(let j=1; j<=20; j+=2) {
+                    var newText = document.createTextNode(j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==4) {
+                for(let j=0; j<=100; j+=5) {
+                    var newText = document.createTextNode(j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==5) {
+                for(let j=0; j<=10; j+=1) {
+                    var newText = document.createTextNode(j*j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==6) {
+                for(let j=20; j>=1; j--) {
+                    var newText = document.createTextNode(j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==7) {
+                for(let j=20; j>=1; j-=2) {
+                    var newText = document.createTextNode(j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==8) {
+                for(let j=19; j>=1; j-=2) {
+                    var newText = document.createTextNode(j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==9) {
+                for(let j=100; j>=1; j-=5) {
+                    var newText = document.createTextNode(j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==10) {
+                for(let j=10; j>=1; j--) {
+                    var newText = document.createTextNode(j*j+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==11) {
+                for(let j=0; j<sampleArray.length; j++) {
+                    var newText = document.createTextNode(sampleArray[j]+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==12) {
+                for(let j=0; j<sampleArray.length; j++) {
+                    if (sampleArray[j]%2==0) {
+                        var newText = document.createTextNode(sampleArray[j]+' ')
+                        element.appendChild(newText)
+                        dest.appendChild(element)
+                    }
+                }
+            } else if (i==13) {
+                for(let j=0; j<sampleArray.length; j++) {
+                    if (sampleArray[j]%2!=0) {
+                        var newText = document.createTextNode(sampleArray[j]+' ')
+                        element.appendChild(newText)
+                        dest.appendChild(element)
+                    }
+                }
+            } else if (i==14) {
+                for(let j=0; j<sampleArray.length; j++) {
+                    var newText = document.createTextNode(sampleArray[j]*sampleArray[j]+' ')
+                    element.appendChild(newText)
+                    dest.appendChild(element)
+                }
+            } else if (i==15) {
+                let sum = 0
+                for(let j=0; j<=20; j++) {
+                    sum += j
+                }
+                var newText = document.createTextNode(sum)
+                element.appendChild(newText)
+                dest.appendChild(element)
+            } else if (i==16) {
+                let sum = 0
+                for(let j=0; j<sampleArray.length; j++) {
+                    sum += sampleArray[j]
+                }
+                var newText = document.createTextNode(sum)
+                element.appendChild(newText)
+                dest.appendChild(element)
+            } else if (i==17) {
+                let min = sampleArray[0]
+                for(let j=0; j<sampleArray.length; j++) {
+                    if (min>sampleArray[j]) {
+                        min = sampleArray[j]
+                    }
+                }
+                var newText = document.createTextNode(min)
+                element.appendChild(newText)
+                dest.appendChild(element)
+            } else if (i==18) {
+                let max = sampleArray[0]
+                for(let j=0; j<sampleArray.length; j++) {
+                    if (max<sampleArray[j]) {
+                        max = sampleArray[j]
+                    }
+                }
+                var newText = document.createTextNode(max)
+                element.appendChild(newText)
+                dest.appendChild(element)
+            } else if (i==19) {
+                for(let j=0; j<20; j++) {
+                    var rect = document.createElement("div")
+                    rect.className = "rect"
+                    rect.style.width = "100px"
+                    rect.style.height = "20px"
+                    rect.style.backgroundColor = "gray"
+                    rect.style.marginBottom = "10px"
+                    dest.appendChild(rect)
+                }
+            } else if (i==20) {
+                for(let j=5; j<=100; j+=5) {
+                    var rect = document.createElement("div")
+                    rect.className = "rect"
+                    rect.style.width = 100 + j + "px"
+                    rect.style.height = "20px"
+                    rect.style.backgroundColor = "gray"
+                    rect.style.marginBottom = "10px"
+                    dest.appendChild(rect)
+                }
+            } else if (i==21) {
+                for(let j=0; j< sampleArray.length; j+=1) {
+                    var rect = document.createElement("div")
+                    rect.className = "rect"
+                    rect.style.width = sampleArray[j] + "px"
+                    rect.style.height = "20px"
+                    rect.style.backgroundColor = "gray"
+                    rect.style.marginBottom = "10px"
+                    dest.appendChild(rect)
+                }
+            } else if (i==22) {
+                for(let j=0; j< sampleArray.length; j+=1) {
+                    var rect = document.createElement("div")
+                    rect.className = "rect"
+                    rect.style.width = sampleArray[j] + "px"
+                    rect.style.height = "20px"
+                    rect.style.backgroundColor = "gray"
+                    rect.style.marginBottom = "10px"
+                    if (j%2!=0) {
+                        rect.style.backgroundColor = "red"
+                    }
+                    dest.appendChild(rect)
+                }
+            } else if (i==23) {
+                for(let j=0; j< sampleArray.length; j+=1) {
+                    var rect = document.createElement("div")
+                    rect.className = "rect"
+                    rect.style.width = sampleArray[j] + "px"
+                    rect.style.height = "20px"
+                    rect.style.backgroundColor = "gray"
+                    rect.style.marginBottom = "10px"
+                    if (sampleArray[j]%2==0) {
+                        rect.style.backgroundColor = "red"
+                    }
+                    dest.appendChild(rect)
+                }
+            }
+
+        }
+        
+    </script>
+  </body>
+</html>
